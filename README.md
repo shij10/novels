@@ -13,14 +13,6 @@
 - [第二章 代码](/chapters/disengaged-ring/chapter2.md)
 - [第三章 加密](/chapters/disengaged-ring/chapter3.md)
 
-### 示例小说
-
-**简介**：一个关于梦想与成长的故事。
-
-**章节**：
-- [第一章 开始](/chapters/example/chapter1.md)
-- [第二章 旅程](/chapters/example/chapter2.md)
-
 ---
 
 *📱 移动端适配良好，点击左上角菜单可查看完整目录。*
