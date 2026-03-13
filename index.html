@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes">
+  <title>我的小说集</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    :root {
+      --theme-color: #42b983;
+      --theme-color-dark: #2d8c6b;
+      --reading-bg: #f8f4e8;
+      --text-color: #3a3a3a;
+    }
+    
+    body {
+      background-color: var(--reading-bg);
+    }
+    
+    .markdown-section {
+      color: var(--text-color);
+      font-size: 17px;
+      line-height: 1.9;
+      letter-spacing: 0.5px;
+      max-width: 800px;
+      padding: 20px 25px;
+    }
+    
+    .markdown-section h1,
+    .markdown-section h2,
+    .markdown-section h3 {
+      color: #2c3e50;
+      margin-top: 1.5em;
+    }
+    
+    .markdown-section p {
+      text-indent: 2em;
+      margin: 1em 0;
+    }
+    
+    .sidebar {
+      background-color: #fafafa;
+      font-size: 14px;
+    }
+    
+    .sidebar ul {
+      margin: 0;
+    }
+    
+    .sidebar li {
+      margin: 0;
+      padding: 5px 0;
+    }
+    
+    .sidebar li > p {
+      font-weight: 600;
+      margin: 10px 15px 5px;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .markdown-section {
+        font-size: 16px;
+        padding: 15px 20px;
+      }
+      
+      .sidebar-toggle {
+        background-color: var(--theme-color);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .sidebar-toggle span {
+        background-color: #fff;
+      }
+    }
+    
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--theme-color);
+      z-index: 9999;
+      transition: width 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">加载中...</div>
+  <div class="progress" id="progress"></div>
+  
+  <script>
+    window.$docsify = {
+      name: '我的小说集',
+      repo: 'https://gitee.com/shij10/novels',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      auto2top: true,
+      
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: '搜索',
+        noData: '没有结果',
+        depth: 6
+      },
+      
+      pagination: {
+        previousText: '上一章节',
+        nextText: '下一章节',
+        crossChapter: true,
+        crossChapterText: true,
+      }
+    };
+    
+    window.addEventListener('scroll', function() {
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var progress = (scrollTop / scrollHeight) * 100;
+      document.getElementById('progress').style.width = progress + '%';
+    });
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+</body>
+</html>
